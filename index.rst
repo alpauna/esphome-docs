@@ -361,6 +361,7 @@ Analogue
     MCP3204 / MCP3208, components/sensor/mcp3204, mcp3204.jpg, 4-channel ADC
     NAU7802, components/sensor/nau7802, nau7802.jpg, ADC
     Resistance, components/sensor/resistance, omega.svg, dark-invert
+    HX710, components/sensor/hx710, HX710B-IC.jpg, Serial protocol 24-Bit ADC
 
 Bluetooth Low Energy (BLE)
 **************************
