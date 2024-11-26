@@ -509,6 +509,13 @@ Environmental
     TMP117, components/sensor/tmp117, tmp117.jpg, Temperature
     XGZP68xx Series, components/sensor/xgzp68xx, 6897d.jpg, Differential Pressure
 
+Health/Safety
+*************
+
+.. imgtable::
+
+    Seeed Studio MR60FDA2 mmWave, components/seeed_mr60fda2, seeed_mr60fda2.jpg, Presence & Fall detection
+
 Light
 *****
 
@@ -638,6 +645,7 @@ Core
     GPIO, components/binary_sensor/gpio, gpio.svg
     Home Assistant, components/binary_sensor/homeassistant, home-assistant.svg, dark-invert
     Status, components/binary_sensor/status, server-network.svg, dark-invert
+    Switch, components/binary_sensor/switch, electric-switch.svg, dark-invert
 
 Capacitive Touch
 ****************
