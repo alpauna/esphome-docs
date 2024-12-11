@@ -40,6 +40,7 @@ and ``CLK`` (or ``SCK``) to free GPIO pins.
         name: "HX710 Value"
         dout_pin: D0
         clk_pin: D1
+        reference_voltage: 3.3V
         mode: 1
         update_interval: 60s
 
@@ -48,6 +49,7 @@ Configuration variables:
 
 - **dout_pin** (**Required**, :ref:`Pin Schema <config-pin_schema>`): The DOUT (or DAT) pin.
 - **clk_pin** (**Required**, :ref:`Pin Schema <config-pin_schema>`): The CLK pin.
+- **reference_voltage** (*Optional*, Voltage): This specifies the referance voltage supplied to ADC. Also, this is how it calculates the voltage on sample function. **Note:** Passing in a 0.0V will cause it to just dump the data with voltage_sampler::VoltageSampler.sample()
 - **mode** (*Optional*, enum): The gain. Implicitly selects the frequency and register. Defaults to ``1``.
 
     - ``1`` (10 HZ, Differential Input)
