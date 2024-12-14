@@ -89,6 +89,27 @@ to the calibrated one:
 
 Replace the masses and values ``120.0``, ``810.0``, etc with your values.
 
+Pressure Sensor Example
+-----------------------
+Since, this is a differential ADC it reads based on the differential between positive and negative inputs as the value. 
+This works great in the case you want to read between both positive pressure and vacuum conditions with a differential pressure sensor containing a resistor bridge array.
+Such as `GZP168 <https://www.lcsc.com/product-detail/Pressure-Sensors_Sencoch-Semiconductor-GZP168-001S_C3037986.html>`__
+Simply read the ``0`` pressure point and get the voltage provided there. Say it was ``-0.2831 V`` then read another know pressure and get its value at that point 
+say it was ``2.3461 V`` now use ``calibrate_linear`` with those two points in it. Also say the ``reference_voltage`` was ``5.0V`` it will be possible to calculate the pressures accross the supported 
+range quite well from testing I have done with these sensors. See all other options from :ref:`Sensor <config-sensor>`.
+
+.. code-block:: yaml
+
+    # Example configuration entry
+    sensor:
+      - platform: hx710
+        # ... Other HX710 options
+        filters:
+          - calibrate_linear:
+              - -0.2831 -> 0
+              - 2.3461 -> .5
+        unit_of_measurement: Kpa
+
 Thanks
 ------
 I would like to thank `@bogde <https://github.com/bogde>`__ for his work on his HX711 library as I used it to derive this library.
